@@ -1,6 +1,6 @@
 {
-    "name": "raeen/api",
-    "description": "An php api framework",
+    "name": "raeen/bambo",
+    "description": "Bambo is a php api framework",
     "type": "project",
     "license": "MIT",
     "authors": [

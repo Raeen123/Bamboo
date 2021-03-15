@@ -24,13 +24,13 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
-    'name' => 'raeen/api',
+    'reference' => 'd2a20bec29c0e2d0eeb8a34547815b7dc0a93a6c',
+    'name' => 'raeen/bambo',
   ),
   'versions' => 
   array (
@@ -61,14 +61,14 @@ private static $installed = array (
       ),
       'reference' => '994ecccd8f3283ecf5ac33254543eb0ac946d525',
     ),
-    'raeen/api' => 
+    'raeen/bambo' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'd2a20bec29c0e2d0eeb8a34547815b7dc0a93a6c',
     ),
     'symfony/polyfill-ctype' => 
     array (
