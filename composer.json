@@ -1,0 +1,21 @@
+{
+    "name": "raeen/api",
+    "description": "An php api framework",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Raeen",
+            "email": "raeen.ahniazari@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\" : "./"
+        }
+    },
+    "require": {
+        "bramus/router": "~1.5",
+        "vlucas/phpdotenv": "^5.3"
+    }
+}
