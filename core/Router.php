@@ -415,43 +415,23 @@ class Router
                 var_dump(array($controller, $method));
             }
         } elseif (class_exists($this->getNamespace() . '\\' . $fn) or class_exists($fn)) {
-            if (!empty($_REQUEST)) {
-                list($controller, $method) = [$fn, strtolower($this->requestedMethod)];
-                // Adjust controller class if namespace has been set
-                if ($this->getNamespace() !== '') {
-                    $controller = $this->getNamespace() . '\\' . $controller;
-                }
 
-                // Make sure it's callable
-                if (is_callable(array((new $controller()), $method))) {
-                    if ((new \ReflectionMethod($controller, $method))->isStatic()) {
-                        forward_static_call_array(array($controller, $method), $params);
-                    } else {
-                        // Make sure we have an instance, to prevent "non-static method … should not be called statically" warnings
-                        if (\is_string($controller)) {
-                            $controller = new $controller();
-                        }
-                        call_user_func_array(array($controller, $method), $params);
-                    }
-                }
-            } else {
-                list($controller, $method) = [$fn, "router"];
-                // Adjust controller class if namespace has been set
-                if ($this->getNamespace() !== '') {
-                    $controller = $this->getNamespace() . '\\' . $controller;
-                }
+            list($controller, $method) = [$fn, strtolower($this->requestedMethod)];
+            // Adjust controller class if namespace has been set
+            if ($this->getNamespace() !== '') {
+                $controller = $this->getNamespace() . '\\' . $controller;
+            }
 
-                // Make sure it's callable
-                if (is_callable(array((new $controller()), $method))) {
-                    if ((new \ReflectionMethod($controller, $method))->isStatic()) {
-                        forward_static_call_array(array($controller, $method), $params);
-                    } else {
-                        // Make sure we have an instance, to prevent "non-static method … should not be called statically" warnings
-                        if (\is_string($controller)) {
-                            $controller = new $controller();
-                        }
-                        call_user_func_array(array($controller, $method), $params);
+            // Make sure it's callable
+            if (is_callable(array((new $controller()), $method))) {
+                if ((new \ReflectionMethod($controller, $method))->isStatic()) {
+                    forward_static_call_array(array($controller, $method), $params);
+                } else {
+                    // Make sure we have an instance, to prevent "non-static method … should not be called statically" warnings
+                    if (\is_string($controller)) {
+                        $controller = new $controller();
                     }
+                    call_user_func_array(array($controller, $method), $params);
                 }
             }
         }

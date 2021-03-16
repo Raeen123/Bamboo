@@ -8,6 +8,7 @@ class  Controller
     protected $path;
     protected $metod;
     protected $response;
+    protected $files;
 
     public function __construct()
     {
@@ -15,6 +16,7 @@ class  Controller
         $this->path =  Application::$app->request->path();
         $this->metod =  Application::$app->request->metod();
         $this->response = Application::$app->response;
+        $this->files = Application::$app->file->files;
     }
     protected function render(int $code, array|object $data = null, $status = null, $message = null)
     {
@@ -23,5 +25,13 @@ class  Controller
     protected function auth($username, $password)
     {
         return Application::$app->request->auth($username, $password);
+    }
+    protected function download($key, $saveFilename = null)
+    {
+        return Application::$app->file->downlaod($key, $saveFilename);
+    }
+    protected function sendFile($filename)
+    {
+        return Application::$app->file->sendFile($filename);
     }
 }

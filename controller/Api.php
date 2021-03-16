@@ -15,7 +15,13 @@ class Api extends Controller
             $this->render(200, null, null, "data is set");
         }
     }
-    //No Request
+    public function file()
+    {
+        if ($this->files->userfile) {
+            $this->download('userfile');
+            $this->sendFile($this->files->userfile->name);
+        }
+    }
     public function router($name)
     {
         if (isset($name) and $this->auth('raeen', 123)) {
