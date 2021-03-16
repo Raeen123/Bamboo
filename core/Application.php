@@ -23,7 +23,7 @@ class Application
         $this->response = new Response();
         $this->router = new Router();
         $this->file = new File();
-        $this->db = new DB($_ENV['SERVERNAME'] . ":" . $_ENV['PORT'], $_ENV['USERNAME'], $_ENV['PASSWORD'], $_ENV['DATABASENAME']);
+        $this->db = new DB($_ENV['DB_SERVER'] . ":" . $_ENV['DB_PORT'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD'], $_ENV['DB_NAME']);
     }
     public function run()
     {

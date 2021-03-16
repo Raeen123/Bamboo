@@ -34,4 +34,8 @@ class  Controller
     {
         return Application::$app->file->sendFile($filename);
     }
+    protected function apikey($length = 20)
+    {
+        return Application::$app->response->apikey($length);
+    }
 }
