@@ -33,4 +33,18 @@ class Request
         }
         return $body;
     }
+    public function auth($username, $password)
+    {
+        if (!isset($_SERVER['PHP_AUTH_USER'])) {
+            header('WWW-Authenticate: Basic realm="My Realm"');
+            header('HTTP/1.0 401 Unauthorized');
+            return false;
+        } else {
+            if ($_SERVER['PHP_AUTH_USER'] == $username && $_SERVER['PHP_AUTH_PW'] == $password) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
 }

@@ -12,13 +12,13 @@ class Api extends Controller
     {
         if (isset($this->data->name)) {
             DB::query("INSERT user SET name=?", $this->data->name);
-            $this->render(200,null,null,"data is set");
+            $this->render(200, null, null, "data is set");
         }
     }
     //No Request
-    public function __noRequest($name)
+    public function router($name)
     {
-        if (isset($name)) {
+        if (isset($name) and $this->auth('raeen', 123)) {
             $query = DB::query("SELECT * FROM user WHERE name=?", $name);
             $result = $query->fetch(PDO::FETCH_OBJ);
             if (!$result) {
@@ -26,21 +26,6 @@ class Api extends Controller
             } else {
                 $this->render(200, ['person' => $result]);
             }
-            
         }
-    }
-    //api info
-    public function info()
-    {
-        $this->render(200, [
-            'FOR INSERT' => [
-                'METOD' => 'POST',
-                'PARAMETER' => 'NAME'
-            ],
-            'FOR SELECT' => [
-                'METOD' => 'LINK',
-                'PARAMETER' => '/api/{NAME}'
-            ],
-        ]);
     }
 }

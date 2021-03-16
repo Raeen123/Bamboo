@@ -18,6 +18,10 @@ class  Controller
     }
     protected function render(int $code, array|object $data = null, $status = null, $message = null)
     {
-        Application::$app->response->render($code,$data,$status,$message);
+        Application::$app->response->render($code, $data, $status, $message);
+    }
+    protected function auth($username, $password)
+    {
+        return Application::$app->request->auth($username, $password);
     }
 }

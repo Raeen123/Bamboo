@@ -435,7 +435,7 @@ class Router
                     }
                 }
             } else {
-                list($controller, $method) = [$fn, "__noRequest"];
+                list($controller, $method) = [$fn, "router"];
                 // Adjust controller class if namespace has been set
                 if ($this->getNamespace() !== '') {
                     $controller = $this->getNamespace() . '\\' . $controller;
