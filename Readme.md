@@ -18,7 +18,7 @@ Bamboo is a php api framework . Very easy , simple and light
 <br>
 
 ```shell
-composer create-project raeen/bambo
+composer create-project raeen/bamboo
 ```
 <br>
 
