@@ -3,7 +3,7 @@
 use app\core\Application;
 
 require_once __DIR__ . "/../vendor/autoload.php";
-$app = new Application(__DIR__);
+$app = new Application();
 $router = $app->router;
 //Routes
 $router->post('/api', 'Api');

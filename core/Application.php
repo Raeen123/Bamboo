@@ -13,11 +13,11 @@ class Application
     public File $file;
     public DB $db;
     public static Application $app;
-    public function __construct($rootPath)
+    public function __construct()
     {
         $dotenv = Dotenv::createImmutable(dirname(__DIR__));
         $dotenv->load();
-        self::$ROOT_DIR = dirname($rootPath);
+        self::$ROOT_DIR = dirname(__DIR__);
         self::$app = $this;
         $this->request = new Request();
         $this->response = new Response();
