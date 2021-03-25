@@ -6,7 +6,7 @@ class  Controller
 {
     protected $data;
     protected $path;
-    protected $metod;
+    protected $method;
     protected $response;
     protected $files;
 
@@ -14,7 +14,7 @@ class  Controller
     {
         $this->data = (object) Application::$app->request->body();
         $this->path =  Application::$app->request->path();
-        $this->metod =  Application::$app->request->metod();
+        $this->method =  Application::$app->request->method();
         $this->response = Application::$app->response;
         $this->files = Application::$app->file->files;
     }

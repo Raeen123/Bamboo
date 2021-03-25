@@ -13,18 +13,18 @@ class Request
         }
         return $path;
     }
-    public function metod()
+    public function method()
     {
         return strtolower($_SERVER['REQUEST_METHOD']);
     }
     public function body()
     {
         $body = [];
-        if ($this->metod() == 'get') {
+        if ($this->method() == 'get') {
             foreach ($_GET as $key => $value) {
                 $body[$key] = filter_input(INPUT_GET, $key, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             }
-        } else if ($this->metod() == 'post') {
+        } else if ($this->method() == 'post') {
             foreach ($_POST as $key => $value) {
                 $body[$key] = filter_input(INPUT_POST, $key, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             }
