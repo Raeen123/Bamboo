@@ -8,6 +8,7 @@ Bamboo is a php api framework . Very easy , simple and light
 <small>Made by Raeen Ahani in 2021 in Gorgan, Iran<small>
  <br><br>
  
+[![Latest Stable Version](https://poser.pugx.org/raeen/bamboo/v)](//packagist.org/packages/raeen/bamboo)[![Total Downloads](https://poser.pugx.org/raeen/bamboo/downloads)](//packagist.org/packages/raeen/bamboo)[![Latest Unstable Version](https://poser.pugx.org/raeen/bamboo/v/unstable)](//packagist.org/packages/raeen/bamboo)[![License](https://poser.pugx.org/raeen/bamboo/license)](//packagist.org/packages/raeen/bamboo)[![Monthly Downloads](https://poser.pugx.org/raeen/bamboo/d/monthly)](//packagist.org/packages/raeen/bamboo)[![Daily Downloads](https://poser.pugx.org/raeen/bamboo/d/daily)](//packagist.org/packages/raeen/bamboo)[![composer.lock](https://poser.pugx.org/raeen/bamboo/composerlock)](//packagist.org/packages/raeen/bamboo)[![.gitattributes](https://poser.pugx.org/raeen/bamboo/gitattributes)](//packagist.org/packages/raeen/bamboo)[![Dependents](https://poser.pugx.org/raeen/bamboo/dependents)](//packagist.org/packages/raeen/bamboo)[![Suggesters](https://poser.pugx.org/raeen/bamboo/suggesters)](//packagist.org/packages/raeen/bamboo)
 
 ****
 <br>
